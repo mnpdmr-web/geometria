@@ -1,0 +1,1604 @@
+/*====================================================
+ GEOAULA - PLATAFORMA EDUCATIVA DE GEOMETRÍA
+ ARCHIVO: style.css
+=====================================================*/
+
+
+/*====================================================
+ VARIABLES GLOBALES
+=====================================================*/
+
+:root {
+
+    --primary:#2563eb;
+    --secondary:#06b6d4;
+    --accent:#f59e0b;
+
+    --success:#22c55e;
+    --danger:#ef4444;
+
+    --background:#f8fafc;
+    --surface:#ffffff;
+
+    --text:#1e293b;
+    --text-light:#64748b;
+
+    --border:#e2e8f0;
+
+    --shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+
+    --radius:20px;
+
+    --transition:
+    all .35s ease;
+
+}
+
+
+/*====================================================
+ MODO OSCURO
+=====================================================*/
+
+body.dark{
+
+    --background:#0f172a;
+
+    --surface:#1e293b;
+
+    --text:#f8fafc;
+
+    --text-light:#cbd5e1;
+
+    --border:#334155;
+
+}
+
+
+
+/*====================================================
+ RESET GENERAL
+=====================================================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    scroll-behavior:smooth;
+
+}
+
+
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:var(--background);
+
+    color:var(--text);
+
+    transition:var(--transition);
+
+}
+
+
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+
+
+ul{
+
+    list-style:none;
+
+}
+
+
+
+img{
+
+    max-width:100%;
+
+}
+
+
+
+/*====================================================
+ HEADER
+=====================================================*/
+
+
+header{
+
+    width:100%;
+
+    height:80px;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 5%;
+
+    background:rgba(255,255,255,.85);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid var(--border);
+
+}
+
+
+
+body.dark header{
+
+    background:rgba(15,23,42,.85);
+
+}
+
+
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
+
+.logo i{
+
+    font-size:32px;
+
+    color:var(--primary);
+
+}
+
+
+
+.logo h2{
+
+    font-size:26px;
+
+    font-weight:700;
+
+}
+
+
+
+nav ul{
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+
+
+nav a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 14px;
+
+    border-radius:12px;
+
+    transition:var(--transition);
+
+}
+
+
+
+nav a:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+
+
+/* BOTON TEMA */
+
+#themeButton{
+
+    border:none;
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-size:18px;
+
+}
+
+
+
+/*====================================================
+ HERO
+=====================================================*/
+
+
+.hero{
+
+    min-height:85vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:5%;
+
+    overflow:hidden;
+
+}
+
+
+
+.hero-left{
+
+    width:50%;
+
+}
+
+
+
+.badge{
+
+    display:inline-block;
+
+    padding:10px 18px;
+
+    background:#dbeafe;
+
+    color:var(--primary);
+
+    border-radius:30px;
+
+    margin-bottom:20px;
+
+    font-weight:600;
+
+}
+
+
+
+.hero h1{
+
+    font-size:60px;
+
+    line-height:1.1;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.hero p{
+
+    font-size:18px;
+
+    color:var(--text-light);
+
+    line-height:1.8;
+
+}
+
+
+
+.hero-right{
+
+    width:40%;
+
+    animation:float 5s infinite ease-in-out;
+
+}
+
+
+
+
+/*====================================================
+ BOTONES
+=====================================================*/
+
+
+.btn-primary,
+.btn-secondary{
+
+
+    display:inline-block;
+
+    padding:14px 30px;
+
+    border-radius:50px;
+
+    margin-top:25px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+
+
+.btn-primary{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+
+
+.btn-primary:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+
+.btn-secondary{
+
+    border:2px solid var(--primary);
+
+    color:var(--primary);
+
+    margin-left:10px;
+
+}
+
+
+
+/*====================================================
+ SECCIONES
+=====================================================*/
+
+
+section{
+
+    padding:80px 5%;
+
+}
+
+
+
+section h2{
+
+    text-align:center;
+
+    font-size:38px;
+
+    margin-bottom:50px;
+
+}
+
+
+
+/*====================================================
+ TARJETAS
+=====================================================*/
+
+
+.cards,
+.competencias-grid,
+.modulos-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:30px;
+
+}
+
+
+
+.card,
+.competencia,
+.modulo{
+
+
+    background:var(--surface);
+
+    padding:30px;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+
+
+.card:hover,
+.competencia:hover,
+.modulo:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+
+.icon{
+
+    width:70px;
+
+    height:70px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary));
+
+    color:white;
+
+    font-size:30px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.modulo{
+
+    text-align:center;
+
+}
+
+
+
+.modulo i{
+
+    font-size:40px;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+}
+
+
+
+/*====================================================
+ PROGRESO
+=====================================================*/
+
+
+.timeline{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+}
+
+
+
+.step{
+
+    text-align:center;
+
+}
+
+
+
+.circle{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    background:#cbd5e1;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-weight:bold;
+
+}
+
+
+
+.step.activo .circle{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+
+
+.line{
+
+    width:50px;
+
+    height:4px;
+
+    background:var(--border);
+
+}
+
+
+
+/*====================================================
+ MODAL
+=====================================================*/
+
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.5);
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:2000;
+
+}
+
+
+
+.modal-content{
+
+    width:90%;
+
+    max-width:500px;
+
+    background:var(--surface);
+
+    padding:40px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+}
+
+
+
+.close-modal{
+
+    float:right;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+}
+
+
+
+/*====================================================
+ BOTON ARRIBA
+=====================================================*/
+
+
+#btnTop{
+
+    position:fixed;
+
+    bottom:30px;
+
+    right:30px;
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:white;
+
+    cursor:pointer;
+
+    display:none;
+
+}
+
+
+
+/*====================================================
+ FOOTER
+=====================================================*/
+
+
+footer{
+
+    background:#0f172a;
+
+    color:white;
+
+    padding:60px 5% 20px;
+
+}
+
+
+
+.footer-container{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:40px;
+
+}
+
+
+
+.footer-col p,
+.footer-col li{
+
+    margin:10px 0;
+
+    color:#cbd5e1;
+
+}
+
+
+
+.copyright{
+
+    text-align:center;
+
+    margin-top:40px;
+
+    border-top:1px solid #334155;
+
+    padding-top:20px;
+
+}
+/*====================================================
+ RECURSOS EDUCATIVOS EMBEBIDOS
+=====================================================*/
+
+
+/* CONTENEDOR GENERAL */
+
+.resource-container{
+
+    width:100%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    background:var(--surface);
+
+    padding:30px;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+/* TITULO DE RECURSOS */
+
+.resource-title{
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+}
+
+
+.resource-title h1{
+
+    font-size:42px;
+
+}
+
+
+.resource-title p{
+
+    color:var(--text-light);
+
+    margin-top:15px;
+
+}
+
+
+
+/*====================================================
+ VIDEO
+=====================================================*/
+
+
+.video-box{
+
+    position:relative;
+
+    width:100%;
+
+    padding-bottom:56.25%;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+
+.video-box iframe{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    border:0;
+
+}
+
+
+
+/*====================================================
+ GEOGEBRA
+=====================================================*/
+
+
+.geogebra-container{
+
+    width:100%;
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+
+.geogebra-container iframe{
+
+    width:100%;
+
+    min-height:650px;
+
+    border:none;
+
+}
+
+
+
+/*====================================================
+ WORDWALL
+=====================================================*/
+
+
+.wordwall-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+}
+
+
+
+.wordwall-container iframe{
+
+    width:100%;
+
+    max-width:900px;
+
+    min-height:500px;
+
+    border-radius:20px;
+
+    border:none;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+
+/*====================================================
+ GOOGLE FORMS
+=====================================================*/
+
+
+.form-container{
+
+    background:var(--surface);
+
+    padding:25px;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    overflow:hidden;
+
+}
+
+
+
+.form-container iframe{
+
+    width:100%;
+
+    min-height:1400px;
+
+    border:none;
+
+}
+
+
+
+/*====================================================
+ ASISTENTE IA
+=====================================================*/
+
+
+.ai-card{
+
+    max-width:800px;
+
+    margin:auto;
+
+    text-align:center;
+
+    padding:50px;
+
+    background:linear-gradient(
+
+    135deg,
+
+    #2563eb,
+
+    #06b6d4
+
+    );
+
+    color:white;
+
+    border-radius:30px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+
+.ai-card i{
+
+    font-size:80px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.ai-card h2{
+
+    color:white;
+
+}
+
+
+
+.ai-button{
+
+    display:inline-block;
+
+    background:white;
+
+    color:#2563eb;
+
+    padding:15px 35px;
+
+    border-radius:50px;
+
+    margin-top:25px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+
+
+.ai-button:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+
+/*====================================================
+ TEORÍA
+=====================================================*/
+
+
+.topic-card{
+
+    background:var(--surface);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    box-shadow:var(--shadow);
+
+    margin-bottom:30px;
+
+}
+
+
+
+.topic-card h3{
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+
+}
+
+
+
+.angle-example{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+
+}
+
+
+
+/*====================================================
+ FIGURAS GEOMÉTRICAS ANIMADAS
+=====================================================*/
+
+
+.shape{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    opacity:.15;
+
+    z-index:-1;
+
+}
+
+
+
+.shape.one{
+
+    width:300px;
+
+    height:300px;
+
+    background:#2563eb;
+
+    top:100px;
+
+    left:-100px;
+
+}
+
+
+
+.shape.two{
+
+    width:250px;
+
+    height:250px;
+
+    background:#06b6d4;
+
+    right:-80px;
+
+    bottom:100px;
+
+}
+
+
+
+/*====================================================
+ ANIMACIONES
+=====================================================*/
+
+
+@keyframes float{
+
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+
+    50%{
+
+        transform:translateY(-20px);
+
+    }
+
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+@keyframes fadeIn{
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+.fade-in{
+
+    animation:fadeIn 1s ease;
+
+}
+
+
+
+/*====================================================
+ PRELOADER
+=====================================================*/
+
+
+#preloader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:var(--background);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:5000;
+
+}
+
+
+
+.loader{
+
+    text-align:center;
+
+}
+
+
+
+.loader .circle{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    border:8px solid var(--border);
+
+    border-top-color:var(--primary);
+
+    animation:spin 1s linear infinite;
+
+    margin:auto;
+
+}
+
+
+
+@keyframes spin{
+
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+/*====================================================
+ RESPONSIVE DESIGN
+ ADAPTACIÓN PARA DISPOSITIVOS
+=====================================================*/
+
+
+/*====================================================
+ TABLETS
+=====================================================*/
+
+
+@media(max-width:1024px){
+
+
+    header{
+
+        padding:0 3%;
+
+    }
+
+
+    nav ul{
+
+        gap:10px;
+
+    }
+
+
+    nav a{
+
+        padding:8px;
+
+        font-size:14px;
+
+    }
+
+
+
+    .hero{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+
+
+    .hero-left{
+
+        width:90%;
+
+    }
+
+
+
+    .hero-right{
+
+        width:70%;
+
+        margin-top:40px;
+
+    }
+
+
+
+    .hero h1{
+
+        font-size:48px;
+
+    }
+
+
+
+    .timeline{
+
+        gap:10px;
+
+    }
+
+
+
+}
+
+
+
+/*====================================================
+ CELULARES
+=====================================================*/
+
+
+@media(max-width:768px){
+
+
+
+    header{
+
+        height:auto;
+
+        padding:20px;
+
+        flex-wrap:wrap;
+
+    }
+
+
+
+    .logo h2{
+
+        font-size:22px;
+
+    }
+
+
+
+    nav{
+
+        width:100%;
+
+        order:3;
+
+        margin-top:20px;
+
+    }
+
+
+
+    nav ul{
+
+        flex-direction:column;
+
+        width:100%;
+
+    }
+
+
+
+    nav a{
+
+        justify-content:center;
+
+        background:var(--surface);
+
+        box-shadow:var(--shadow);
+
+    }
+
+
+
+    #themeButton{
+
+        position:absolute;
+
+        right:20px;
+
+        top:20px;
+
+    }
+
+
+
+    .hero{
+
+        min-height:auto;
+
+        padding-top:50px;
+
+    }
+
+
+
+    .hero h1{
+
+        font-size:38px;
+
+    }
+
+
+
+    .hero p{
+
+        font-size:16px;
+
+    }
+
+
+
+    .hero-right{
+
+        width:90%;
+
+    }
+
+
+
+    .hero-buttons{
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+
+
+    .btn-secondary{
+
+        margin-left:0;
+
+        margin-top:15px;
+
+    }
+
+
+
+    section{
+
+        padding:50px 20px;
+
+    }
+
+
+
+    section h2{
+
+        font-size:30px;
+
+    }
+
+
+
+    .card,
+    .competencia,
+    .modulo{
+
+        padding:25px;
+
+    }
+
+
+
+    .timeline{
+
+        flex-direction:column;
+
+    }
+
+
+
+    .line{
+
+        width:4px;
+
+        height:40px;
+
+    }
+
+
+
+    .video-box{
+
+        padding-bottom:65%;
+
+    }
+
+
+
+    .geogebra-container iframe{
+
+        min-height:450px;
+
+    }
+
+
+
+    .form-container iframe{
+
+        min-height:1200px;
+
+    }
+
+
+
+    .ai-card{
+
+        padding:30px 20px;
+
+    }
+
+
+
+    .ai-card i{
+
+        font-size:55px;
+
+    }
+
+
+
+    footer{
+
+        text-align:center;
+
+    }
+
+
+}
+
+
+
+/*====================================================
+ PANTALLAS PEQUEÑAS
+=====================================================*/
+
+
+@media(max-width:480px){
+
+
+
+    .hero h1{
+
+        font-size:32px;
+
+    }
+
+
+
+    .badge{
+
+        font-size:13px;
+
+    }
+
+
+
+    .logo i{
+
+        font-size:25px;
+
+    }
+
+
+
+    .btn-primary,
+    .btn-secondary{
+
+        width:90%;
+
+        text-align:center;
+
+    }
+
+
+
+    .resource-container{
+
+        padding:15px;
+
+    }
+
+
+
+    .resource-title h1{
+
+        font-size:32px;
+
+    }
+
+
+}
